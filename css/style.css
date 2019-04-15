@@ -60,7 +60,14 @@ header {
     left:0;
     background-color:transparent;
 }/*header*/
-header nav a.headerLogo .logo{
+
+
+/* HOME PAGE*/
+.homepage header{
+    display:flex;
+    flex-direction: row;
+}
+header a.headerLogo .logo{
     display:block;
     width:92px;
     height:65px;
@@ -69,10 +76,381 @@ header nav a.headerLogo .logo{
     will-change: transform;
     transition:.25s ease-in-out;
 }/*header nav a.headerLogo .logo*/
-header nav a.headerLogo .logo:hover{
+header a.headerLogo .logo:hover{
     transform:scale(1.1);
 }/*header nav a.headerLogo hover*/
+.homepage nav{
+    display:flex;
+    flex-direction:row;
+    background-color: transparent;
+}/*homepage nav*/
+/* .homepage .menuList{
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items:center;
+    background-color:green;
+    padding:10px 20px;
+}homepage menuList */
+.homepage ul.menuList{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:center;
+    background-color: transparent;
+    margin-left:40px;
+}/*homepage ul menuList*/
+.homepage .menuList li a{
+    padding:10px;
+    font-family: 'pier_sanslight';
+    font-size:14px;
+    color:white;
+    text-decoration: none;
+}/*menuList li*/
+.homepage .menuRight-container{
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-end;
+    margin:0 0 0 auto;
+    align-items:center;
+    background-color:transparent;
+}/*homepage menuRight container*/
+header .menuRight-container ul.menuRight-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}/*header menuRight-container ul.menuRight-links*/
+header .menuRight-container li a{
+    color:white;
+    font-size:14px;
+    text-transform: uppercase;
+    padding:0 15px;
+    text-decoration:none;
+}/*header menuRight-container li a*/
+header .menuRight-container i.searchIcon{
+    margin-right:10px;
+}/*menuRight container searchIcon*/
+header .menuRight-container i.notificationIcon{
+    margin-left:10px;
+}/*menuRight container notificationIcon*/
 
+.featuredSection{
+    width:100%;
+    height:0;
+    padding-bottom:56.25%;
+    overflow: hidden;
+    position: relative;
+}/*featuredSection padding bottom is value of 9divided by16 times 100 which is aspect ratio must specify height as 0*/
+.featuredSection:after{
+    content:'';
+    width:100%;
+    height:125px;
+    position: absolute;
+    bottom:0;
+    left:0;
+    z-index: 10;
+    background: linear-gradient(to top, #141414, transparent);
+}/*gradient under video*/
+.featuredSection video{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+}/*featuredSection video*/
+.featuredSection .featuredDescriptors {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    /* background-color: orange; */
+    width:40%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    padding-left:75px;
+}/*featuredDescriptors*/
+
+.featuredSection .featuredBtns button{
+    font-family: 'pier_sansbold';
+    font-size:22px;
+    color: #e6e6e6;
+    background: rgba(0, 0, 0, .35);
+    border:none;
+    padding:15px 30px;
+    margin:20px 0;
+} /*featured btns*/
+.featuredSection .featuredBtns .playPause-btn{
+    margin-left:0px;
+    margin-right:20px;
+} /*playPause*/
+
+
+#featuredSelection .featuredBtns button#playPause-btn .playControls{display:none;}
+#featuredSelection .featuredBtns button#playPause-btn .pause-video .pauseControls{display:flex}
+#featuredSelection .featuredBtns button#playPause-btn .pause-video .playControls{display: none;}
+#featuredSelection .featuredBtns button#playPause-btn .play-video .pauseControls{display: none;}
+#featuredSelection .featuredBtns button#playPause-btn .play-video .playControls{display: flex;}
+
+#featuredSelection .featuredBtns button:hover{transform: scale(1.05); transform-origin: center; background: #fff; color: #000; box-shadow: 0 15px 25px 0 rgba(10, 10, 10, .20); cursor: pointer;}
+#featuredSelection .featuredBtns button i{font-size: 28px; margin-right: 8px;}
+
+.featuredDescription {
+    font-family:'pier_sansregular';
+    font-size:22px;
+} /*featuredDescription*/
+
+.mediaRow-container{
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 0 45px 0;
+    width:100%;
+    height:auto;
+    /* background-color: green; */
+}
+.mediaRow-container h2{
+    font-family: 'pier_sansmedium';
+    font-size:21px;
+    color:white;
+    margin-bottom: 15px;
+}
+.mediaRow-container .mediaRow{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+    height: auto;
+}
+.mediaRow-container .mediaRow .mediaItem{
+    width: calc((100% - 30px) / 6);
+    margin-right:5px;
+    box-shadow: none;
+    will-change:transform;
+    transition: .35s ease-in-out;
+    position: relative;
+    z-index:101;
+}
+.mediaRow-container .mediaRow .mediaItem:hover{
+    transform:scale(1.75);
+    transform-origin: center;
+    box-shadow: 0, 15px, 35px, 0 rgba(10, 10, 10, .85);
+    cursor: pointer;
+    z-index: 102;
+}
+.mediaRow-container .mediaRow .mediaItem:first-of-type{
+    transform-origin:center left;
+}
+.mediaRow-container .mediaRow .mediaItem:last-of-type{
+    transform-origin: center right;
+}
+.mediaRow-container .mediaRow .mediaItem .mediaItem-mediaContainer{
+    width:100%;
+    padding: 28.125% 0;
+    height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position:relative;
+}
+.mediaRow-container .mediaRow .mediaItem .mediaItem-mediaContainer .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/ozark.jpg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.mediaRow-container .mediaRow .mediaItem:nth-of-type(2) .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/the-order.jpg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.mediaRow-container .mediaRow .mediaItem:nth-of-type(3) .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/stranger-things.jpg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.mediaRow-container .mediaRow .mediaItem:nth-of-type(4) .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/joe-rogan.jpg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.mediaRow-container .mediaRow .mediaItem:nth-of-type(5) .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/chefs-table.jpg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.mediaRow-container .mediaRow .mediaItem:nth-of-type(6) .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/highway-men.jpg') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.netflixOriginals-container{
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 0 45px 0;
+    width:100%;
+    height:auto;
+    /* background-color: green; */
+}
+.netflixOriginals-container h2{
+    font-family: 'pier_sansmedium';
+    font-size:21px;
+    text-transform: uppercase;
+    color:white;
+    margin-bottom: 15px;
+}
+.netflixOriginals-container .mediaRow{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+    height: auto;
+}
+.netflixOriginals-container .mediaRow .mediaItem{
+    width: calc((100% - 30px) / 6);
+    margin-right:5px;
+    box-shadow: none;
+    will-change:transform;
+    transition: .35s ease-in-out;
+    position: relative;
+    z-index:101;
+}
+.netflixOriginals-container .mediaRow .mediaItem:hover{
+    transform:scale(1.75);
+    transform-origin: center;
+    box-shadow: 0, 15px, 35px, 0 rgba(10, 10, 10, .85);
+    cursor: pointer;
+    z-index: 102;
+}
+.netflixOriginals-container .mediaRow .mediaItem:first-of-type{
+    transform-origin:center left;
+}
+.netflixOriginals-container .mediaRow .mediaItem:last-of-type{
+    transform-origin: center right;
+}
+.netflixOriginals-container .mediaRow .mediaItem .netflix-mediaContainer{
+    width:100%;
+    padding: 100% 0;
+    height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position:relative;
+}
+.netflixOriginals-container .mediaRow .mediaItem .netflix-mediaContainer .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/master-of-none.webp') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.netflixOriginals-container .mediaRow .mediaItem:nth-of-type(2) .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/fyre-festival.webp') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.netflixOriginals-container .mediaRow .mediaItem:nth-of-type(3) .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/kevin-hart.webp') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.netflixOriginals-container .mediaRow .mediaItem:nth-of-type(4) .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/triple-frontier.webp') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.netflixOriginals-container .mediaRow .mediaItem:nth-of-type(5) .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/umbrella-academy.webp') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.netflixOriginals-container .mediaRow .mediaItem:nth-of-type(6) .mediaImage{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/last-kingdom.webp') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+
+
+
+/* PROFILES PAGE*/
 main{
     width:100%;
     max-width:1200px;
@@ -102,6 +480,7 @@ main{
     justify-content: center;
     align-items:center;
     flex-wrap:wrap;
+    margin:65px 0px;
 }/*profilesSelection-row*/
 
 .profileContainer{
@@ -111,6 +490,7 @@ main{
     align-items:center;
     flex:1;
     margin:15px 20px;
+    text-decoration: none;
 }/*profileContainer*/
 
 .profileImage{
@@ -125,12 +505,12 @@ main{
 #profileImage1{
     background: url('../images/dog.png') no-repeat center center;
     background-size:contain;
-}
+}/*profileImage 1*/
 
 #profileImage2{
     background: url('../images/face-red.png') no-repeat center center;
     background-size:contain;
-}
+}/*profileImage 2*/
 
 /* #profileImage3{
     background: url('../images/face-green.png');
@@ -139,31 +519,31 @@ main{
 .profileContainer:nth-of-type(3) .profileImage{
     background:url('../images/face-green.png') no-repeat center center;
     background-size:contain;
-}
+}/*profileImage 3 w/ the nth degree*/
 
 .profileContainer:nth-of-type(4) .profileImage{
     background:url('../images/face-yellow.png') no-repeat center center;
     background-size:contain;
-}
+} /*profileImage 4*/
 
 .profileContainer:nth-of-type(5) .profileImage{
     background:url('../images/kids-section.png')no-repeat center center;
     background-size:contain;
-}
+} /*profileImage 5*/
 
 .profileContainer h2{
     font-family: 'pier_sansregular';
     font-size:20px;
     color:#808080;
     transition: .25s ease-in-out;
-}
+} /*profilecontainer h2*/
 
 .profileContainer:hover .profileImage{
     border-color: white;
-}
+}/*profile container hover*/
 .profileContainer:hover h2{
     color:white;
-}
+}/*profile container h2 hover*/
 
 /* .manageProfiles button{
     color:white;
@@ -173,17 +553,23 @@ main{
 } */
 
 .manageProfiles{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'pier_sansregular';
     font-size:16px;
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
     border: 1px solid #808080;
-    height:40px;
+    min-height:40px;
+    min-width:250px;
     padding:10px 20px;
-    margin-top:70px;
+    /* margin-top:70px; */
     color:#808080;
     text-decoration-line: none;
     transition: .25s ease-in-out;
-}
+} /*manageProfiles*/
 .manageProfiles:hover{
     border-color:white;
     color:white;
-}
+}/*manageProfiles hover*/
